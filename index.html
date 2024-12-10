@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Monoton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Monoton&family=Tilt+Neon&display=swap" rel="stylesheet">
+  <title>Thekaa AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1c0636, #3a0a5a);
+      animation: backgroundAnimation 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background-color: #1c0636;
+      }
+      50% {
+        background-color: #3a0a5a;
+      }
+      100% {
+        background-color: #1c0636;
+      }
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .header {
+  font-size: 4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.2rem;
+  font-family: 'Tilt Neon', sans-serif; /* Replace with a neon-specific font if available */
+  text-shadow:0 0 5px #f77eff, 0 0 10px #e8cfea00, 0 0 20px #f77eff, 0 0 30px #ff00ff, 0 0 40px #000000, 0 0 50px #753a75;
+}
+
+.subheader {
+  font-size: 1.5rem;
+  color: #f77eff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: 'Monoton', sans-serif;
+  text-shadow: 0 0 5px #000000, 0 0 5px #f77eff, 0 0 10px #ff00ff;
+}
+
+
+    .shapes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .shape {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .shape-1 {
+      background: radial-gradient(circle, #f9d835, #fc8e00);
+      animation: rotate 4s linear infinite;
+    }
+
+    .shape-2 {
+      width: 90px;
+      height: 90px;
+      background: #f255ff;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: rotate 4s linear infinite;
+    }
+
+    .shape-3 {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #f255ff, #ff87d1);
+      border-radius: 50%;
+      transform: rotate(45deg);
+      animation: rotate 4s linear infinite;
+    }
+
+    .shape-4 {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #b8d2ff, #6a00ff);
+      clip-path: polygon(50% 0%, 70% 30%, 100% 50%, 70% 70%, 50% 100%, 30% 70%, 0% 50%, 30% 30%);
+      animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .shape:hover {
+      transform: scale(1.2);
+      transition: transform 0.3s;
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #f77eff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #fc8e00;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        font-size: 2rem;
+      }
+
+      .subheader {
+        font-size: 1rem;
+      }
+
+      .shapes-container {
+        gap: 1.5rem;
+      }
+
+      .shape {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .email-container {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .email-input {
+        padding: 10px;
+        font-size: 1rem;
+        border: 2px solid #f77eff;
+        border-radius: 5px;
+        margin-right: 10px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .email-input:focus {
+        border-color: #fc8e00; /* Change border color on focus */
+    }
+
+    .notify-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: #f77eff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .notify-button:hover {
+        background-color: #fc8e00; /* Change color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Thekaa AI</div>
+    <div class="subheader">We are building something!</div>
+    <div class="shapes-container">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+    <div class="email-container">
+        <input type="email" class="email-input" placeholder="Enter your email" required />
+        <button class="notify-button">Notify Me</button>
+    </div>
+  </div>
+</body>
+</html>
