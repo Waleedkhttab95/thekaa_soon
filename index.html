@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Add particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <style>
     body {
       background: linear-gradient(to bottom, #0A0A0A, #1A1A1A);
@@ -20,11 +22,28 @@
       margin: 0;
       padding: 0;
     }
+    /* Add particles container styles */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    /* Adjust hero section to work with particles */
     .hero {
+      position: relative;
       text-align: center;
       padding: 100px 20px;
-      background: url('particles.gif') no-repeat center center;
-      background-size: cover;
+      z-index: 2;
+    }
+    
+    /* Ensure all content stays above particles */
+    .features, .signup-form, .footer {
+      position: relative;
+      z-index: 2;
     }
     .hero h1 {
       font-size: 3.5rem;
@@ -165,6 +184,9 @@
   </style>
 </head>
 <body>
+  <!-- Add particles container -->
+  <div id="particles-js"></div>
+  
   <div class="hero">
     <h1>Transform Your Learning Journey</h1>
     <p>Experience personalized AI tutoring that adapts to your pace and style</p>
@@ -210,6 +232,75 @@
   </div>
 
   <script>
+    // Add particles configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#00FFC6'
+        },
+        shape: {
+          type: 'circle'
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00FFC6',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+
     async function handleSubmit(event) {
       event.preventDefault();
       const button = event.submitter;
