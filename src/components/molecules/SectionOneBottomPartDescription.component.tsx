@@ -14,7 +14,7 @@ const SectionOneBottomPartDescription = () => {
             خطواتك الأولى نحو التعليم الذكي تبدأ من هنــــــا
           </h3>
           <p className="font-medium text-lg md:text-2xl text-center md:text-start">
-            لا تفوّت فرصتك لتحظى بتجربة منصة ذكاء قبل الجميع!
+            لا تفوّت فرصتك لتحظى بتجربة  ذكاء قبل الجميع!
           </p>
         </div>
         <Button className="self-center md:self-auto" variant={"transpirent"}>
