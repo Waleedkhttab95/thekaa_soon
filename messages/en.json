@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "Thekaa",
+    "join-us": "Join Us"
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "English",
+    "switchLocale-sm": "E"
+  }
+}
