@@ -1,7 +1,18 @@
 import Image from "next/image";
 import { Button } from "../atoms/button.component";
+import { useState } from "react";
 
 const SectionOneBottomPartDescription = () => {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const scrollToSection = () => {
+    if (window.sectionTwoFormRef) {
+      window.sectionTwoFormRef.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       className="w-[1196px] md:h-[411px] max-w-full bg-[url('/images/first-section-sub-section-bg.jpg')] 
@@ -17,9 +28,15 @@ const SectionOneBottomPartDescription = () => {
             لا تفوّت فرصتك لتحظى بتجربة  ذكاء قبل الجميع!
           </p>
         </div>
-        <Button className="self-center md:self-auto" variant={"transpirent"}>
+        <Button className="self-center md:self-auto" variant={"transpirent"}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onClick={scrollToSection}
+       >
           سجل معنا الآن
         </Button>
+
+
       </div>
       <Image src={"/svgs/book.svg"} alt="book" width={332} height={280} />
     </div>
