@@ -1,16 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
-import { Button } from "../atoms/button.component";
+import { useLocale } from "next-intl";
 import { Locales } from "@/types/locale.types";
 import { useState, useEffect } from "react";
 
 const Header = () => {
-  const t = useTranslations("HomePage");
   const locale = useLocale();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   // Add scroll effect
   useEffect(() => {
@@ -23,11 +20,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = () => {
-    if (window.sectionTwoFormRef) {
-      window.sectionTwoFormRef.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = () => {
+  //   if (window.sectionTwoFormRef) {
+  //     window.sectionTwoFormRef.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <div 
@@ -49,14 +46,6 @@ const Header = () => {
         width={35}
         height={35}
       />
-      {/* <Button 
-        className={`hidden md:block transition-all duration-300 ${isHovered ? "scale-105" : ""}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={scrollToSection}
-      >
-        {t("join-us")}
-      </Button> */}
     </div>
   );
 };

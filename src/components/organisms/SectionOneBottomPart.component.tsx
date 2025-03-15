@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "../atoms/button.component";
 import Card from "../atoms/card.component";
 import SectionOneBottomPartDescription from "../molecules/SectionOneBottomPartDescription.component";
 

@@ -3,10 +3,10 @@
 
 import { useTranslations } from "next-intl";
 import { Button } from "../atoms/button.component";
-import { useRef, useState } from "react";
+import { useState } from "react";
+
 const TopSectionText = () => {
   const t = useTranslations("HomePage");
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const scrollToSection = () => {

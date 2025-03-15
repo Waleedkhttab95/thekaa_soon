@@ -1,11 +1,8 @@
 import Image from "next/image";
 import { Button } from "../atoms/button.component";
-import { useState } from "react";
 
 const SectionOneBottomPartDescription = () => {
-
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   const scrollToSection = () => {
     if (window.sectionTwoFormRef) {
@@ -29,8 +26,6 @@ const SectionOneBottomPartDescription = () => {
           </p>
         </div>
         <Button className="self-center md:self-auto" variant={"transpirent"}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           onClick={scrollToSection}
        >
           سجل معنا الآن

@@ -1,16 +1,23 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Header from "./molecules/Header.component";
-import SectionTwoForm from "./path/to/SectionTwoForm"; // Adjust the import path
+import SectionTwoForm from "./organisms/SectionTwoForm.component";
 
 const ParentComponent = () => {
-  const sectionTwoFormRef = useRef<HTMLElement>(null); // Create a ref
+  const sectionTwoFormRef = useRef<HTMLDivElement>(null); // Changed to HTMLDivElement
+
+  // Make the ref available globally for the Header component
+  useEffect(() => {
+    if (sectionTwoFormRef.current) {
+      window.sectionTwoFormRef = sectionTwoFormRef.current;
+    }
+  }, []);
 
   return (
     <>
-      <Header sectionTwoFormRef={sectionTwoFormRef} /> {/* Pass the ref to Header */}
+      <Header /> {/* Removed the prop as Header doesn't accept it */}
       {/* ... other components ... */}
       <div ref={sectionTwoFormRef}>
-        <SectionTwoForm /> {/* Attach the ref to SectionTwoForm */}
+        <SectionTwoForm />
       </div>
     </>
   );

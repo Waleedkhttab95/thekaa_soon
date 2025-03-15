@@ -57,8 +57,10 @@ export default function SectionTwoForm() {
     }
 
     return () => {
-      if (sectionTwoFormRef.current) {
-        observer.unobserve(sectionTwoFormRef.current);
+      // Store the ref value in a variable to avoid the exhaustive-deps warning
+      const currentRef = sectionTwoFormRef.current;
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
