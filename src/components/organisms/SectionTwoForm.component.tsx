@@ -74,7 +74,7 @@ export default function SectionTwoForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    fetch('http://dev.thekaa.io/notifications/subscribe', {
+    fetch('https://dev.thekaa.io/notification/subscribe', { 
       method: "POST",
       headers: {
         "Content-Type": "application/json",
