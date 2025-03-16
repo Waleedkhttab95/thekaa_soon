@@ -1,1 +1,0 @@
-"use strict";exports.id=368,exports.ids=[368],exports.modules={7368:e=>{e.exports=JSON.parse('{"HomePage":{"title":"Thekaa","join-us":"Join Us"},"LocaleSwitcher":{"switchLocale":"English","switchLocale-sm":"E"}}')}};

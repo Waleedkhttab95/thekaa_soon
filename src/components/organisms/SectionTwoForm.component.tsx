@@ -26,6 +26,7 @@ declare global {
 const formSchema = z.object({
   name: z.string().min(1, "الاسم مطلوب"),
   email: z.string().email("البريد الإلكتروني غير صالح"),
+  phone: z.string().min(1, "الهاتف مطلوب"),
 });
 
 export default function SectionTwoForm() {
@@ -70,6 +71,7 @@ export default function SectionTwoForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
     },
   });
 
@@ -82,6 +84,7 @@ export default function SectionTwoForm() {
       body: JSON.stringify({
         email: values.email,
         name: values.name,
+        phone: values.phone,
       }),
     })
       .then((response) => response.json())
@@ -166,6 +169,26 @@ export default function SectionTwoForm() {
                     <Input
                       type="email"
                       placeholder="ادخل عنوان بريدك الالكتروني"
+                      {...field}
+                      className="shadow-sm focus:ring-2 focus:ring-pink-200 transition-all duration-300"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="transition-all duration-300 hover:scale-[1.02]">
+                  <FormLabel>الهاتف</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="tel"
+                      placeholder="ادخل رقم الهاتف"
+                      dir="rtl"
                       {...field}
                       className="shadow-sm focus:ring-2 focus:ring-pink-200 transition-all duration-300"
                     />
