@@ -45,7 +45,7 @@ const SectionTwoDescription = () => {
               height={140}
             />
           </Link>
-          <Link href="https://www.linkedin.com/company/thekaa_ai" target="_blank" rel="noopener noreferrer">
+          <Link href="https://www.linkedin.com/company/thekaa-ai" target="_blank" rel="noopener noreferrer">
             <Image
               className="self-start"
               src={"/svgs/linkedin.svg"}
